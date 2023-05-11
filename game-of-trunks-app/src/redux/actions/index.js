@@ -22,3 +22,15 @@ export const requestFail = (error) => {
   };
 }
 
+export const fetchCharacter = (name) => {
+  return async (dispatch) => {
+    try {
+      dispatch(requestStarted());
+      const response = await fetch(`https://anapioficeandfire.com/api/characters?name=${name}`);
+      const data = await response.json();
+      dispatch(requestReceived(data));
+    } catch (error) {
+      dispatch(requestFail(error))
+    }
+  }
+}
