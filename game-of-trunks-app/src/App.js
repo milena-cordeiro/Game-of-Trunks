@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import CharacterCard from './components/CharacterCard';
 
 export class App extends Component {
   render() {
@@ -9,6 +10,9 @@ export class App extends Component {
         <input type="text" id='input-name' />
         </label>
         <button type='button'>pesquisar</button>
+        <section>
+          <CharacterCard />
+        </section>
       </div>
     )
   }
